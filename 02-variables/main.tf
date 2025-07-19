@@ -1,8 +1,8 @@
-variable "url" {
+variable "URL" {
   default = "example.com"
 }
 
-#Access the variable
+##Access the variable
 output "url" {
   value = "var.URL"
 

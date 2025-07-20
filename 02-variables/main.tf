@@ -59,5 +59,4 @@ output "map1_aws_trainer" {
 }
 
 #declare a empty variable and we can get the value from CLI unlike shell and ansible we must and should declare a variable in order to use it.
-variable "trainer_name" {
-}
+variable "trainer_name" {}

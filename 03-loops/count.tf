@@ -1,3 +1,1 @@
-resource "null_resource" "demo" {
-  count = 11
-}
+resource "null_resource" "demo" {}

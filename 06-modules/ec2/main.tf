@@ -9,4 +9,10 @@ resource "aws_instance" "mongodb" {
 }
 
 variable "instance_name" {}
-variable "ip_address" {}
+output "ip_address" {
+  value = "aws_instance.instance.private_ip"
+}
+
+#output in child module won't print it on the screen.
+#output in root module will print it on the screen as output.
+

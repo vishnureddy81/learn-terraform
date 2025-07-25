@@ -1,12 +1,10 @@
-resource "aws_instance" "mongodb" {
+resource "aws_instance" "instance" {
   ami      = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
   vpc_security_group_ids= ["sg-0fabcecd5236d6dce"]
   tags = {
-    name= "var.instance_name"
-
+    Name= "test-$(var.env)"
   }
 }
 
-variable "instance_name" {}
-variable "ip_address" {}
+variable "env"{}

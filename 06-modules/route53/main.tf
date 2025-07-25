@@ -7,5 +7,4 @@ resource "aws_route53_record" "record" {
 }
 
 variable "instance_name" {}
-
 variable "ip_address" {}

@@ -2,7 +2,7 @@ provider "vault" {
   address = "https://172.31.14.180:8200"
   #vault private ip address we have to provide it.
   token   = var.vault_token
-  # skip_tls_verify = true
+  skip_tls_verify = true
 }
 
 variable "vault_token" {}
@@ -17,7 +17,7 @@ data "vault_kv_secret_v2" "example" {
 }
 
 resource "local_file" "foo" {
-  content  = jsonencode(data.vault_kv_secret_v2.example.data_json)
+  content  = data.vault_kv_secret_v2.example.data_json["password"]
   filename = "/tmp/secret"
 }
 
